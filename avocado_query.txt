@@ -1,0 +1,39 @@
+drop table if exists avocados;
+drop table if exists calicli;
+drop table if exists calisales;
+
+create table avocados (
+	id int primary key,
+	date date,
+	average_price numeric(3,2),
+	total_volume numeric(12,4),
+	type char(12),
+	year int,
+	geography varchar(30)
+);
+select * from avocado;
+
+create table calicli (
+	Date int primary key,
+	value decimal,
+	anomally numeric(3,2)
+);
+select * from calicli;
+
+create table calisales (
+	date int primary key,
+	average_price_organic numeric(10,2),
+	average_price_conventional numeric(10,2),
+	total_volume_organic numeric(20,4),
+	total_volume_conventional numeric(20,4),
+	value decimal
+);
+select * from avocados;
+
+select date_part(yyyy,Date) + date_part(mm,date) as newdate
+
+,sum(case when type = 'organic' then (total_volume * average_price) end) as total_price_organic
+,sum(case when type = 'organic' then (total_volume) end) as total_vol_org
+from avocado
+where geography = 'California'
+group by datepart(yyyy,Date) + datepart(mm,date)
