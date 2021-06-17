@@ -33,7 +33,7 @@ The first steps in cleaning up the datasets involved finding and removing irelev
 
 LOAD:
 - Created engine in Jupyter Notebook to connect to Postgres Db
-- Created database in Postgresql and tables to reflect to the Pandas Dataframe.
-- Connected the Postgresql database to Pandas.
+- Created database in PostgreSQL and tables to reflect to the Pandas Dataframe.
+- Connected the PostgreSQL database to Pandas.
 - Stored the data inside the avocados database. 
-- We used structured database (Postgresql) since our datasets are clearly defined and searchable.
+- We used structured database (PostgreSQL) since our datasets are clearly defined and searchable.
